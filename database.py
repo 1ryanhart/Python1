@@ -52,7 +52,6 @@ class NEODatabase:
             approach.neo = associated_neo   #associate this neo object to the approach.neo
             associated_neo.approaches.append(approach)  #append this approach to the neo's approaches list
 
-
     def get_neo_by_designation(self, designation):
         """Find and return an NEO by its primary designation.
 
