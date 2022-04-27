@@ -75,30 +75,60 @@ class DistanceFilter(AttributeFilter):
     """A subclass of AttributeFilter. Defines get method which returns the approach.distance value"""
     @classmethod
     def get(cls, approach):
+        """Gets the distance attribute from a close approach.
+        
+        This overrides the AttributeFilter get method.
+        :param approach: A `CloseApproach` on which to evaluate this filter.
+        :return: The value of the distance attribute, comparable to `self.value` via `self.op`.
+        """
         return approach.distance
 
 class VelocityFilter(AttributeFilter):
     """A subclass of AttributeFilter. Defines get method which returns the approach.velocity value"""
     @classmethod
     def get(cls, approach):
+        """Gets the velocity attribute from a close approach.
+        
+        This overrides the AttributeFilter get method.
+        :param approach: A `CloseApproach` on which to evaluate this filter.
+        :return: The value of the velocity attribute, comparable to `self.value` via `self.op`.
+        """
         return approach.velocity
 
 class DiameterFilter(AttributeFilter):
     """A subclass of AttributeFilter. Defines get method which returns the approach.neo.diameter value"""
     @classmethod
     def get(cls, approach):
+        """Gets the associated near earth object's diameter attribute from a close approach.
+        
+        This overrides the AttributeFilter get method.
+        :param approach: A `CloseApproach` on which to evaluate this filter.
+        :return: The value of the 'CloseApproach''s 'NearEarthObject''s diameter attribute, comparable to `self.value` via `self.op`.
+        """
         return approach.neo.diameter
 
 class HazardousFilter(AttributeFilter):
     """A subclass of AttributeFilter. Defines get method which returns the approach.neo.hazardous value"""
     @classmethod
     def get(cls, approach):
+        """Gets the associated near earth object's hazardous attribute from a close approach.
+        
+        This overrides the AttributeFilter get method.
+        :param approach: A `CloseApproach` on which to evaluate this filter.
+        :return: The value of the 'CloseApproach''s 'NearEarthObject''s hazardous attribute, comparable to `self.value` via `self.op`.
+        """
         return approach.neo.hazardous
 
 class DateFilter(AttributeFilter):
     """A subclass of AttributeFilter. Defines get method which returns the approach.time.date() value"""
     @classmethod
     def get(cls, approach):
+        """Gets the time attribute from a close approach.
+        
+        This overrides the AttributeFilter get method.
+        :param approach: A `CloseApproach` on which to evaluate this filter.
+        :return: The value of the time attribute, comparable to `self.value` via `self.op`.
+        """
         return approach.time.date()
 
 def create_filters(

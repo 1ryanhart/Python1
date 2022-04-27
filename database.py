@@ -108,3 +108,8 @@ class NEODatabase:
                     break
             if doesPass:
                 yield approach
+
+        # *********A cleaner way to write this is as follows:*************
+        # for approach in self._approaches:
+        #     if all(f(approach) for f in filters):
+        #         yield approach
